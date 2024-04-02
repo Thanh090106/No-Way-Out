@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   sprint: 40
-  sprintTime: 100
+  sprintTime: 5
 --- !u!4 &141427187
 Transform:
   m_ObjectHideFlags: 0

@@ -28,12 +28,12 @@ public class CharacterMovement : MonoBehaviour
         right.y = 0f;
         forward.Normalize();
         right.Normalize();
+        
         if(Input.GetKey(KeyCode.LeftShift) && sprintTime > 1)
         {
             moveSpeed = sprint;
             sprintTime = sprintTime - 1 * Time.deltaTime;
             sprintTime = Mathf.Clamp(sprintTime,0f,5f);
-            
         }
         else if(!Input.GetKey(KeyCode.LeftShift))
         {
@@ -41,6 +41,14 @@ public class CharacterMovement : MonoBehaviour
             sprintTime = sprintTime + 1 * Time.deltaTime;
             sprintTime = Mathf.Clamp(sprintTime,0f,5f);
         }
+        else
+        {
+            moveSpeed = 5f;
+        }
+        
+       
+        
+       
         print(sprintTime);
         moveDirection = (forwardInput * forward) + (rightInput * right);
         moveDirection.Normalize();
