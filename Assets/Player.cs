@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float playerHealth = 100; 
+    public float playerHealth = 1000f; 
+    public GameObject respawn; 
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +17,8 @@ public class Player : MonoBehaviour
     {
         if(playerHealth<=0)
         {
-            
-            Destroy(gameObject);
+            Application.LoadLevel("PlayAgain");
+            playerHealth = 1000f; 
         }
     }
     void OnTriggerStay(Collider player)
@@ -25,11 +26,16 @@ public class Player : MonoBehaviour
         if(player.gameObject.CompareTag("Enemy"))
         {
             TakeDamage(10f);
+            print("Health is " +playerHealth);
         }
         
     }
     public void TakeDamage(float damage)
     {
         playerHealth -= damage;
+    }
+    public void Teleport()
+    {
+       transform.position = respawn.transform.position; 
     }
 }

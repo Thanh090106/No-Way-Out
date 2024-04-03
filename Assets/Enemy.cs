@@ -3,13 +3,10 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int damage = 10;
+
     private Transform target; 
     public float speed; 
-    public int getDamage()
-    {
-        return damage;
-    }
+   
     
     // Start is called before the first frame update
     void Start()

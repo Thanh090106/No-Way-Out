@@ -49,7 +49,7 @@ public class CharacterMovement : MonoBehaviour
        
         
        
-        print(sprintTime);
+        
         moveDirection = (forwardInput * forward) + (rightInput * right);
         moveDirection.Normalize();
         moveDirection.y = 0f;
