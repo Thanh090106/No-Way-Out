@@ -25,14 +25,14 @@ public class Player : MonoBehaviour
     {
         if(player.gameObject.CompareTag("Enemy"))
         {
-            TakeDamage(10f);
+            TakeDamage();
             print("Health is " +playerHealth);
         }
         
     }
-    public void TakeDamage(float damage)
+    public void TakeDamage()
     {
-        playerHealth -= damage;
+        playerHealth -= 10f;
     }
     public void Teleport()
     {
