@@ -1,23 +1,23 @@
 
 using UnityEngine;
-
+using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
 
-    private Transform target; 
-    public float speed; 
+    public Transform target; 
+    private NavMeshAgent enemy; 
    
     
     // Start is called before the first frame update
     void Start()
     {
-        target= GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        enemy = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        enemy.SetDestination(target.position);
         
     }
 }
