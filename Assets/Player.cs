@@ -5,7 +5,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float playerHealth = 1000f; 
-    public GameObject respawn; 
     // Start is called before the first frame update
     void Start()
     {
@@ -33,9 +32,5 @@ public class Player : MonoBehaviour
     public void TakeDamage()
     {
         playerHealth -= 10f;
-    }
-    public void Teleport()
-    {
-       transform.position = respawn.transform.position; 
     }
 }

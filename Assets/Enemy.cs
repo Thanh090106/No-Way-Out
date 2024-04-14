@@ -18,6 +18,6 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         enemy.SetDestination(target.position);
-        
+        transform.LookAt(target);
     }
 }
