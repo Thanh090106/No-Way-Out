@@ -10,6 +10,7 @@ public class Grab : MonoBehaviour
     public GameObject ground;
     GameObject instantiateObj = null;
     
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -27,11 +28,12 @@ public class Grab : MonoBehaviour
        {
             if(instantiateObj != null)
             {
-                instantiateObj.SetActive(false);
+                Destroy(instantiateObj);
             }
            item.SetActive(true);
-           tempItem.SetActive(false);
+           Destroy(tempItem);
            equiped = true;
+           
        }
    
     }
@@ -40,7 +42,7 @@ public class Grab : MonoBehaviour
        if(equiped && Input.GetKey(KeyCode.F))
        {
            item.SetActive(false);
-           instantiateObj = Instantiate(this.tempItem, ground.transform.position, Quaternion.identity);
+           instantiateObj = Instantiate(item, ground.transform.position, Quaternion.identity);
            instantiateObj.SetActive(true);
            equiped = false;
            
