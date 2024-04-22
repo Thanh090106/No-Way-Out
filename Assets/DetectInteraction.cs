@@ -4,23 +4,45 @@ using UnityEngine;
 
 public class DetectInteraction : MonoBehaviour
 {
-    Grab grab;
-    // Start is called before the first frame update
-    void Start()
-    {
-        grab = FindObjectOfType<Grab>();
-    }
-
-    // Update is called once per frame
+    public bool equiped = false;
+    public GameObject ground;
+    GameObject handObj = null;
+    public Transform hand;
     void Update()
     {
-        grab.Drop();
+        Drop();
     }
     private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.CompareTag("Item"))
+        if(other.gameObject.GetComponent<InteractionObject>())
         {
-            grab.Pick();
+            Pick(other.gameObject);
         }
+    }
+    public void Pick(GameObject other)
+    {
+       if(!equiped && Input.GetKey(KeyCode.E))
+       {
+           handObj = Instantiate(other, ground.transform.position, Quaternion.identity);
+           handObj.transform.position = Vector3.zero;
+           hand.localScale = Vector3.one;
+           handObj.transform.SetParent(hand);
+           equiped = true;
+           Destroy(other);
+       }
+   
+    }
+    public void Drop()
+    {
+       if(equiped && Input.GetKey(KeyCode.F))
+       {
+           handObj.transform.SetParent(null);
+           handObj.transform.position = Vector3.zero;
+           hand.localScale = Vector3.one;
+           Instantiate(handObj, ground.transform.position, Quaternion.identity);
+           Destroy(handObj);
+           equiped = false;
+           
+       }
     }
 }
