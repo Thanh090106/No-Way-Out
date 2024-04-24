@@ -6,29 +6,36 @@ using UnityEngine;
 public class Raycast : MonoBehaviour
 {
     // Start is called before the first frame update
-    PickUp pickUp;
+    public float range = 100f;
    
     void Start()
     {
-        pickUp = FindObjectOfType<PickUp>();
+        
     }
     [SerializeField] private float maxDistance = 1f;
     InteractionObject hit = null;
     // Update is called once per frame
     void Update()
     {
+       if(Input.GetButtonDown("Fire1"))
+        {
+            Shoot();
+        }
+        
+    }
+    public void Shoot()
+    {
         Vector3 origin = Camera.main.transform.position;
         Vector3 direction = Camera.main.transform.forward;
-        RaycastHit raycastHit = new RaycastHit();
-        if(Physics.Raycast(origin, direction, out raycastHit, maxDistance))
+        RaycastHit hit;
+        if (Physics.Raycast(origin, direction, out hit, range))
         {
-            hit = raycastHit.collider.gameObject.GetComponent<InteractionObject>();
+           Enemy enemy = hit.transform.GetComponent<Enemy>();
+           if(enemy)
+           {
+             print("hi");
+           }
         }
-        if(hit)
-        {
-            pickUp.Pick();
-        }
-        pickUp.Drop();
     }
 }
 
