@@ -6,7 +6,7 @@ public class DetectInteraction : MonoBehaviour
 {
     public bool equiped = false;
     public GameObject ground;
-    GameObject handObj = null;
+    GameObject itemHeld = null;
     public Transform hand;
     void Update()
     {
@@ -23,10 +23,11 @@ public class DetectInteraction : MonoBehaviour
     {
        if(!equiped && Input.GetKey(KeyCode.E))
        {
-           handObj = Instantiate(other, ground.transform.position, Quaternion.identity);
-           handObj.transform.position = Vector3.zero;
-           hand.localScale = Vector3.one;
-           handObj.transform.SetParent(hand);
+           itemHeld = Instantiate(other, ground.transform.position, Quaternion.identity);
+           
+           itemHeld.transform.SetParent(hand);
+           itemHeld.transform.position = hand.position;
+           itemHeld.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
            equiped = true;
            Destroy(other);
        }
@@ -36,13 +37,9 @@ public class DetectInteraction : MonoBehaviour
     {
        if(equiped && Input.GetKey(KeyCode.F))
        {
-           handObj.transform.SetParent(null);
-           handObj.transform.position = Vector3.zero;
-           hand.localScale = Vector3.one;
-           Instantiate(handObj, ground.transform.position, Quaternion.identity);
-           Destroy(handObj);
+           GameObject newItemDrop = Instantiate(itemHeld, ground.transform.position, Quaternion.identity);
+           Destroy(itemHeld);
            equiped = false;
-           
        }
     }
 }
