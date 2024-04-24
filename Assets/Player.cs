@@ -26,15 +26,10 @@ public class Player : MonoBehaviour
     {
         if(player.gameObject.CompareTag("Enemy"))
         {
-            TakeDamage();
+            playerHealth -= 10f;
             print("Health is " +playerHealth);
         }
        
-    }
-    public void TakeDamage()
-    {
-        print("hi");
-        playerHealth -= 10f;
     }
 }
 
