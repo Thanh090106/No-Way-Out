@@ -5,6 +5,7 @@ using UnityEngine;
 public class DetectInteraction : MonoBehaviour
 {
     public bool equiped = false;
+    public string item = "";
     public GameObject ground;
     GameObject itemHeld = null;
     public Transform hand;
@@ -27,8 +28,10 @@ public class DetectInteraction : MonoBehaviour
            
            itemHeld.transform.SetParent(hand);
            itemHeld.transform.position = hand.position;
-           itemHeld.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+           itemHeld.transform.localScale = new Vector3(1f, 1f, 1f);
+           
            equiped = true;
+           item = other.gameObject.name;
            Destroy(other);
        }
    
@@ -40,6 +43,11 @@ public class DetectInteraction : MonoBehaviour
            GameObject newItemDrop = Instantiate(itemHeld, ground.transform.position, Quaternion.identity);
            Destroy(itemHeld);
            equiped = false;
+           item = "";
        }
+    }
+    public string ItemName()
+    {
+        return item; 
     }
 }
