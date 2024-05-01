@@ -4,17 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Thanh scene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Scenes/PlayAgain.unity
-    guid: 6d60ca3ab38088d4a950a3a952fd2089
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: dd763af2ca94c804eaef7de21eae0314
-  - enabled: 1
-    path: Assets/Scenes/MainGame.unity
-    guid: 9f42659ec6388a6429be7a0324f2fa91
+  m_Scenes: []
   m_configObjects: {}
