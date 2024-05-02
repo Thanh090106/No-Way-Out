@@ -52,7 +52,7 @@ public class CharacterMovement : MonoBehaviour
         
         moveDirection = (forwardInput * forward) + (rightInput * right);
         moveDirection.Normalize();
-        moveDirection.y = 0f;
+        moveDirection.y = -98f * Time.deltaTime;
         characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
         
     }
