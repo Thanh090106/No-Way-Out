@@ -9,7 +9,8 @@ public class TestPlayer : MonoBehaviour
 
     public GameObject m_GotHitScreen; 
 
-    private bool attacks = false; 
+    private bool attackMode = false; 
+    private bool RedIncrease = false; 
 
     
     // Start is called before the first frame update
@@ -25,12 +26,15 @@ public class TestPlayer : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.K))
         {
-            attacks = true;
+            attackMode = true;
+            RedIncrease = true;
+            print("true");
         }
 
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            attacks = false; 
+            RedIncrease = false; 
+            print("false");
         }
 
         if(playerHealth<=0)
@@ -38,26 +42,28 @@ public class TestPlayer : MonoBehaviour
             Application.LoadLevel("PlayAgain");
             playerHealth = 1000f;
         }
-
-        if(attacks)
+        if(attackMode)
         {
-            if(m_GotHitScreen.GetComponent<Image>.color.a > 0)
+            if(RedIncrease)
             {
                 var color = m_GotHitScreen.GetComponent<Image>().color;
-
                 color.a += 0.01f;
-
-                m_GotHitScreen.GetComponent<Image>().color = color;
+                m_GotHitScreen.GetComponent<Image>().color = color; 
             }
+            else
+            {
+                var color = m_GotHitScreen.GetComponent<Image>().color;
+                color.a -= 0.01f;
+                m_GotHitScreen.GetComponent<Image>().color = color;
+                if(color.a <= 0)
+                {
+                    attackMode = false; 
+                }
+                
+            }
+            
         }
-        else if(!attacks)
-        {
-            var color = m_GotHitScreen.GetComponent<Image>().color;
-
-            color.a -= 0.01;
-
-            m_GotHitScreen.GetComponent<Image>().color = color;
-        }
+        
     }
     void OnTriggerStay(Collider player)
     {
@@ -71,12 +77,14 @@ public class TestPlayer : MonoBehaviour
 
     void OnTriggerEnter()
     {
-        attacks = true; 
+        // add check to see if we are colliding with the enemy
+        attackMode = true; 
+        RedIncrease = true; 
     }
 
     void OnTriggerExit()
     {
-        attacks = false;
+        RedIncrease = false;
     }
 }
 
