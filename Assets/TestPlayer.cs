@@ -24,19 +24,6 @@ public class TestPlayer : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            attackMode = true;
-            RedIncrease = true;
-            print("true");
-        }
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            RedIncrease = false; 
-            print("false");
-        }
-
         if(playerHealth<=0)
         {
             Application.LoadLevel("PlayAgain");
