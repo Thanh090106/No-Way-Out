@@ -22,6 +22,16 @@ public class Events : MonoBehaviour
             testEvent.Invoke();
             
         }
+        if(inside && Input.GetKeyDown(KeyCode.E) && hand.Find("hammer"))
+        {
+            testEvent.Invoke();
+            
+        }
+        if(inside && Input.GetKeyDown(KeyCode.E) && hand.Find("crowbar"))
+        {
+            testEvent.Invoke();
+            
+        }
     }
     void TestListener()
     {
