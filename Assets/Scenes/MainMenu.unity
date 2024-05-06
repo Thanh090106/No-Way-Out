@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -486,7 +486,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1081360790}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32fab5b772f632b48b06488719c55e3e, type: 3}
+  m_Script: {fileID: 11500000, guid: 20ae1c743b777644aac2a6256ff5c5d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1081360793
@@ -535,7 +535,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1081360792}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
-        m_MethodName: Load
+        m_MethodName: LoadMain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -701,7 +701,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1242088224}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32fab5b772f632b48b06488719c55e3e, type: 3}
+  m_Script: {fileID: 11500000, guid: 20ae1c743b777644aac2a6256ff5c5d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1242088227
