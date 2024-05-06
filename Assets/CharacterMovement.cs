@@ -10,6 +10,7 @@ public class CharacterMovement : MonoBehaviour
     private Vector3 moveDirection;
     public float sprint = 40f;
     public float sprintTime = 5f;
+    public float speed = 0;
     
     
     void Start()
@@ -31,19 +32,22 @@ public class CharacterMovement : MonoBehaviour
         
         if(Input.GetKey(KeyCode.LeftShift) && sprintTime > 1)
         {
-            moveSpeed = sprint;
+            
+            speed = sprint;
             sprintTime = sprintTime - 1 * Time.deltaTime;
             sprintTime = Mathf.Clamp(sprintTime,0f,5f);
         }
         else if(!Input.GetKey(KeyCode.LeftShift))
         {
-            moveSpeed = 5f;
+            
+            speed = moveSpeed;
             sprintTime = sprintTime + 1 * Time.deltaTime;
             sprintTime = Mathf.Clamp(sprintTime,0f,5f);
         }
         else
         {
-            moveSpeed = 5f;
+            
+            speed = moveSpeed;
         }
         
        
@@ -53,7 +57,7 @@ public class CharacterMovement : MonoBehaviour
         moveDirection = (forwardInput * forward) + (rightInput * right);
         moveDirection.Normalize();
         moveDirection.y = -98f * Time.deltaTime;
-        characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
+        characterController.Move(moveDirection * speed * Time.deltaTime);
         
     }
     
