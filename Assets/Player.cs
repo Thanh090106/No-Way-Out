@@ -6,6 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float playerHealth = 1000f; 
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class Player : MonoBehaviour
             Application.LoadLevel("PlayAgain");
             playerHealth = 1000f;
         }
+        
     }
     void OnTriggerStay(Collider player)
     {

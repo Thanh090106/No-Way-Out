@@ -32,6 +32,11 @@ public class Events : MonoBehaviour
             testEvent.Invoke();
             
         }
+        if(inside && Input.GetKeyDown(KeyCode.E) && hand.Find("MasterKey"))
+        {
+            testEvent.Invoke();
+            
+        }
     }
     void TestListener()
     {

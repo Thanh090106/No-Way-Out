@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public Transform target;
     private NavMeshAgent enemy;
+    public GameObject masterKey; 
    
    
     // Start is called before the first frame update
@@ -20,6 +21,15 @@ public class Enemy : MonoBehaviour
     {
         enemy.SetDestination(target.position);
     }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Cross"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    
 }
 
 

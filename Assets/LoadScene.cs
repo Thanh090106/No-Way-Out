@@ -15,12 +15,17 @@ public class LoadScene : MonoBehaviour
     {
         
     }
-    public void Load()
+    public void LoadMain()
     {
         Application.LoadLevel("MainGame");
     }
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void LoadMenu()
+    {
+        Application.LoadLevel("MainMenu");
     }
 }

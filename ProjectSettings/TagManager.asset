@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Item
+  - Spike
+  - Explosive
+  - Cross
   layers:
   - Default
   - TransparentFX
