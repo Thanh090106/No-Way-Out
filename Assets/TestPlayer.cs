@@ -26,7 +26,7 @@ public class TestPlayer : MonoBehaviour
 
         if(playerHealth<=0)
         {
-            Application.LoadLevel("PlayAgain");
+            Application.LoadLevel("JumpScare");
             playerHealth = 1000f;
         }
         if(attackMode)
