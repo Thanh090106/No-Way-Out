@@ -19,7 +19,7 @@ public class TheEnd : MonoBehaviour
      {
         if(other.CompareTag("Player"))
         {
-            Application.LoadLevel("MainMenu");
+            Application.LoadLevel("GoodEnding");
         }
      }
 }
