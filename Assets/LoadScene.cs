@@ -28,4 +28,12 @@ public class LoadScene : MonoBehaviour
     {
         Application.LoadLevel("MainMenu");
     }
+    public void LoadGoodEnding()
+    {
+        Application.LoadLevel("GoodEnding");
+    }
+    public void LoadBadEnding()
+    {
+        Application.LoadLevel("BadEnding");
+    }
 }

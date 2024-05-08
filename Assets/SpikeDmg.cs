@@ -20,10 +20,9 @@ public class SpikeDmg : MonoBehaviour
     {
         if(detectInteraction.getDrop())
         {
-            if(other.CompareTag("Enemy"))
+            if(other.CompareTag("Player"))
             {
-                print("hi");
-                Destroy(other.gameObject);
+                Application.LoadLevel("PlayAgain");
             }
         }
     }
