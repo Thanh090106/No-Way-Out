@@ -17,22 +17,22 @@ public class Events : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(inside && Input.GetKeyDown(KeyCode.E) && hand.Find("RustKey"))
+        if(inside && Input.GetKeyDown(KeyCode.E) && hand.Find("RustKey") && gameObject.name.Equals("Chest"))
         {
             testEvent.Invoke();
             
         }
-        if(inside && Input.GetKeyDown(KeyCode.E) && hand.Find("hammer"))
+        if(inside && Input.GetKeyDown(KeyCode.E) && hand.Find("hammer") && gameObject.name.Equals("Vase"))
         {
             testEvent.Invoke();
             
         }
-        if(inside && Input.GetKeyDown(KeyCode.E) && hand.Find("crowbar"))
+        if(inside && Input.GetKeyDown(KeyCode.E) && hand.Find("crowbar") && gameObject.name.Equals("Vent"))
         {
             testEvent.Invoke();
             
         }
-        if(inside && Input.GetKeyDown(KeyCode.E) && hand.Find("MasterKey"))
+        if(inside && Input.GetKeyDown(KeyCode.E) && hand.Find("MasterKey") && gameObject.name.Equals("Door"))
         {
             testEvent.Invoke();
             
