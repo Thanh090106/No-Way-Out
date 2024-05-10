@@ -9,6 +9,7 @@ TagManager:
   - Spike
   - Explosive
   - Cross
+  - EnemyMaze
   layers:
   - Default
   - TransparentFX

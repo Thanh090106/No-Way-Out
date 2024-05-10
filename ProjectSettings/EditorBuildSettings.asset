@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/JumpScare.unity
     guid: 965d264626bf06045b78e925819b7401
+  - enabled: 1
+    path: Assets/JumpScareMaze.unity
+    guid: e4696d0d678157d468514350fb354b0b
   m_configObjects: {}

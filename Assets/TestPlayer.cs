@@ -24,11 +24,9 @@ public class TestPlayer : MonoBehaviour
     void Update()
     {
 
-        if(playerHealth<=0)
-        {
-            Application.LoadLevel("JumpScare");
-            playerHealth = 1000f;
-        }
+       
+        
+
         if(attackMode)
         {
             if(RedIncrease)
@@ -57,9 +55,17 @@ public class TestPlayer : MonoBehaviour
     }
     void OnTriggerStay(Collider player)
     {
-        if(player.gameObject.CompareTag("Enemy"))
+        if(player.gameObject.CompareTag("Enemy") || player.gameObject.CompareTag("EnemyMaze"))
         {
             playerHealth -= 10f;
+            if(playerHealth <=0 && player.gameObject.CompareTag("Enemy"))
+            {
+                Application.LoadLevel("JumpScare");
+            }
+            if(playerHealth <=0 && player.gameObject.CompareTag("EnemyMaze"))
+            {
+                Application.LoadLevel("JumpScareMaze");
+            }
             //print("Health is " +playerHealth);
         }
        
