@@ -15,7 +15,7 @@ public class LoadScene : MonoBehaviour
     {
         
     }
-    public void LoadMain()
+    public void LoadMainGame()
     {
         Application.LoadLevel("MainGame");
     }
@@ -24,7 +24,7 @@ public class LoadScene : MonoBehaviour
         Application.Quit();
     }
 
-    public void LoadMenu()
+    public void LoadMainMenu()
     {
         Application.LoadLevel("MainMenu");
     }
