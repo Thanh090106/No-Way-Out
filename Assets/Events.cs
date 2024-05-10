@@ -7,7 +7,7 @@ public class Events : MonoBehaviour
     public UnityEvent testEvent = new UnityEvent();
     public bool inside = false;
     public Transform hand; 
-    // Start is called before the first frame update
+   
     void Start()
     {
         testEvent.AddListener(TestListener);
