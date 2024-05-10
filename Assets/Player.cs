@@ -33,10 +33,7 @@ public class Player : MonoBehaviour
         }
         
     }
-    public void TakeDamage()
-    {
-        playerHealth -= 10f;
-    }
+    
 }
 
 

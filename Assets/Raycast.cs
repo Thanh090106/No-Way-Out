@@ -7,10 +7,11 @@ public class Raycast : MonoBehaviour
 {
     // Start is called before the first frame update
     public float range = 100f;
-   
+    Enemy enemy;
+    public ParticleSystem holySpirit;
     void Start()
     {
-        
+       
     }
     [SerializeField] private float maxDistance = 1f;
     InteractionObject hit = null;
@@ -19,8 +20,8 @@ public class Raycast : MonoBehaviour
     {
        if(Input.GetMouseButtonDown(0))
         {
-            print("hi");
             Shoot();
+            holySpirit.Play();
         }
         
     }
@@ -31,10 +32,11 @@ public class Raycast : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(origin, direction, out hit, range))
         {
-           Enemy enemy = hit.transform.GetComponent<Enemy>();
+           enemy = hit.transform.GetComponent<Enemy>();
            if(enemy)
            {
-             print("hi");
+             enemy.CauseDamage();
+             print("Enemy health: " + enemy.GetEnemyHealth());
            }
         }
     }

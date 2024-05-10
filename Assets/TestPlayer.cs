@@ -60,7 +60,7 @@ public class TestPlayer : MonoBehaviour
         if(player.gameObject.CompareTag("Enemy"))
         {
             playerHealth -= 10f;
-            print("Health is " +playerHealth);
+            //print("Health is " +playerHealth);
         }
        
     }

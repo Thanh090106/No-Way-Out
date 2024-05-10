@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public Transform target;
     private NavMeshAgent enemy;
     public GameObject masterKey; 
-   
+    public int health = 100;
    
     // Start is called before the first frame update
     void Start()
@@ -20,13 +20,18 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         enemy.SetDestination(target.position);
-    }
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Cross"))
+        if(health <= 0)
         {
             Destroy(gameObject);
         }
+    }
+    public int GetEnemyHealth()
+    {
+        return health;
+    }
+    public void CauseDamage()
+    {
+        health -= 20;
     }
 
     
