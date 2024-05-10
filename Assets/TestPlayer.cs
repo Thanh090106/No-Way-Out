@@ -71,16 +71,24 @@ public class TestPlayer : MonoBehaviour
        
     }
 
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider other)
     {
         // add check to see if we are colliding with the enemy
-        attackMode = true; 
-        RedIncrease = true; 
+        if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyMaze"))
+        {
+            attackMode = true; 
+            RedIncrease = true; 
+        }
+        
     }
 
-    void OnTriggerExit()
+    void OnTriggerExit(Collider other)
     {
-        RedIncrease = false;
+        if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyMaze"))
+        {
+             RedIncrease = false;
+        }
+        
     }
 }
 
