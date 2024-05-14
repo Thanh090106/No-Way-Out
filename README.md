@@ -9,6 +9,6 @@ How to Play Doc: https://docs.google.com/document/d/1rsgFA_G6K4EEF92ruE7Y_IGTWJw
 
 Trailer: https://streamable.com/f86h48
 
-Partners "how i did this": https://www.loom.com/share/4814e497194340fc9de4c04f3844cbdd?sid=c9d42382-6589-44cd-82e6-a339e746fc81
+Carsons "how i did this": https://www.loom.com/share/4814e497194340fc9de4c04f3844cbdd?sid=c9d42382-6589-44cd-82e6-a339e746fc81
 
 Thanhs "how i did this": 
