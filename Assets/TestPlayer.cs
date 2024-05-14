@@ -88,6 +88,10 @@ public class TestPlayer : MonoBehaviour
         {
              RedIncrease = false;
         }
+        else if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyMaze") == false)
+        {
+            RedIncrease = false;
+        }
         
     }
 }
