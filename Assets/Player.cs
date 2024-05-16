@@ -26,14 +26,20 @@ public class Player : MonoBehaviour
     }
     void OnTriggerStay(Collider player)
     {
-        if(player.gameObject.CompareTag("Enemy"))
+        if(player.gameObject.CompareTag("Enemy") || player.gameObject.CompareTag("EnemyMaze"))
         {
             playerHealth -= 10f;
             print("Health is " +playerHealth);
+            if(playerHealth <=0 && player.gameObject.CompareTag("Enemy"))
+            {
+                Application.LoadLevel("JumpScare");
+            }
+            if(playerHealth <=0 && player.gameObject.CompareTag("EnemyMaze"))
+            {
+                Application.LoadLevel("JumpScareMaze");
+            }
         }
-        
     }
-    
 }
 
 

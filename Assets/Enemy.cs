@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public Transform target;
     private NavMeshAgent enemy;
-    public GameObject masterKey; 
+   
     public int health = 100;
    
     // Start is called before the first frame update
